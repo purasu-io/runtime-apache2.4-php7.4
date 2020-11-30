@@ -69,6 +69,7 @@ RUN set -eux; \
 RUN set -eux; \
   a2enconf remoteip; \
   a2enmod remoteip; \
+  a2enmod rewrite; \
   install -d /a/shared/public -o 10000 -g 10000; \
   install -d /run/apache2 -o 10000; \
   chown -R 10000 /var/log/apache2;
