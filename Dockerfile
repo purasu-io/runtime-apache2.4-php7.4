@@ -26,7 +26,9 @@ RUN set -eux; \
     vim \
     nano \
     htop \
-  ;
+  ; \
+  apt-get clean; \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
 
 RUN set -eux; \
   apt-get update; \
