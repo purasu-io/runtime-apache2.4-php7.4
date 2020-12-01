@@ -3,17 +3,17 @@
 set -euo pipefail
 
 _term() {
-  echo "killing apache"
+  echo "Shutdown Apache"
   kill -WINCH "${apache_pid}" || true
   wait "${apache_pid}"
-  echo "apache killed"
+  echo "Apache exited"
 
-  echo "killing tail"
+  echo "Shutdown tail"
   kill "${tail_pid}" || true
   wait "${tail_pid}"
   echo "tail exited"
-  echo "exiting"
 
+  echo "Bye"
   exit 0
 }
 

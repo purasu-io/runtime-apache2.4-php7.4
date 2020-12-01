@@ -67,12 +67,14 @@ RUN set -eux; \
   setcap -v cap_net_bind_service=+ep /usr/sbin/apache2;
 
 RUN set -eux; \
+  a2disconf other-vhosts-access-log; \
   a2enconf remoteip; \
   a2enmod remoteip; \
   a2enmod rewrite; \
+  a2enmod expires; \
+  a2enmod headers; \
   install -d /a/shared/public -o 10000 -g 10000; \
-  install -d /run/apache2 -o 10000; \
-  chown -R 10000 /var/log/apache2;
+  install -d /run/apache2 -o 10000;
 
 USER 10000
 ENV APACHE_RUN_USER="web"
