@@ -2,15 +2,20 @@ version: '2'
 
 services:
   web:
-    image: eu.gcr.io/rdx-net-public-registry/apache2.4-php7.4:${IMAGE_TAG:-latest}
+    image: eu.gcr.io/purasu-public/apache2.4-php7.4:${IMAGE_TAG:-latest}
     build:
       context: .
+      cache_from:
+        - eu.gcr.io/purasu-public/apache2.4-php7.4:${IMAGE_TAG:-latest}
     ports:
       - '80:80'
     volumes:
       - type: bind
-        source: ./volumes/a-shared
-        target: /a/shared
+        source: ./volumes/public
+        target: /public
+      - type: bind
+        source: ./volumes/private
+        target: /private
 
 networks:
   default:

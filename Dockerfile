@@ -74,7 +74,7 @@ RUN set -eux; \
   a2enmod rewrite; \
   a2enmod expires; \
   a2enmod headers; \
-  install -d /a/shared/public -o 10000 -g 10000; \
+  install -d /public -o 10000 -g 10000; \
   install -d /run/apache2 -o 10000;
 
 USER 10000

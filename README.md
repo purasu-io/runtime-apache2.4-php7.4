@@ -4,5 +4,5 @@
 
 * `docker-compose up`
 
-* `echo '<?php phpinfo();' > volumes/a-shared/public/index.php`
+* `echo '<?php phpinfo();' > volumes/public/index.php`
 * `curl localhost:8080`
