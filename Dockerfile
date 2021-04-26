@@ -51,6 +51,7 @@ RUN set -eux; \
     php7.4-readline \
     php7.4-json \
     php7.4-xml \
+    php7.4-imagick \
   ; \
   ln -snf /usr/share/zoneinfo/$TZ /etc/localtime; \
   echo $TZ > /etc/timezone; \
